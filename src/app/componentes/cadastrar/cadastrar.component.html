@@ -1,0 +1,65 @@
+<h2>Cadastrar  tarefa</h2>
+<form [formGroup]="form" novalidate>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                <div class="col-sm-10">
+                    <label for="inputPassword" class="col-sm-2 col-form-label"><b>Tarefa:</b></label>
+                <input type="text" class="form-control" id="inputPassword" formControlName="nome">
+                <span *ngIf="form.controls.nome.touched && form.controls.nome.errors?.minlength">
+                    Nome deve conter 5 ou mais caracteres.
+                  </span>
+            
+            </div>
+            </th>
+            <th>
+                <button type="button" class="btn btn-success" (click)="cadastrar()" [disabled]="form.invalid" data-bs-toggle="modal" data-bs-target="#modalTarefa">
+      <i class="bi bi-plus-lg"></i>
+      Cadastrar
+    </button>
+                &nbsp;
+                <button type="button" class="btn btn-secondary" [routerLink]="['/']"><i class="bi bi-reply">Voltar</i></button>
+            </th>
+        </tr>
+
+    </thead>
+</table>
+</form>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="modalTarefa"
+  tabindex="-1"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTarefaLabel">Cadastro de tarefa</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">Tarefa cadastrada com sucesso!</div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" data-bs-dismiss="modal">
+          Nova tarefa
+        </button>
+        <button
+          type="button"
+          class="btn btn-info"
+          data-bs-dismiss="modal"
+          [routerLink]="['']"
+        >
+          Listar tarefas
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

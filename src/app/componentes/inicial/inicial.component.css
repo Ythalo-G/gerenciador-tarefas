@@ -1,0 +1,20 @@
+.concluido{
+    text-decoration: line-through;
+}
+
+button {
+    width: 100px;
+}
+
+.ordenar-tarefa{
+    cursor: pointer;
+}
+#div-input {
+    display: flex;
+    justify-content: center;
+}
+
+#search-field {
+    width: 20%;
+    justify-content: flex-end
+}
